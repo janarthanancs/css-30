@@ -1,0 +1,26 @@
+mixin eye(dir)
+  div(class=`eye eye-`+dir)
+    div(class=`eye-inner eye-inner-`+dir)
+      .pupil
+
+mixin ear(dir)
+  div(class=`ear ` +dir)
+    .inner
+
+doctype html
+html
+  head
+    title Koala
+    link(href=require('./koala.scss') rel='stylesheet')
+  body
+    .koala
+      .head
+        .hair
+        .hair
+        +eye('left')
+        +eye('right')
+        .nose
+          .nose-inner
+        .mouth
+      +ear('left')
+      +ear('right')

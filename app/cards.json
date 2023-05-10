@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Elephant 🐘",
+    "link": "./elephant.html",
+    "caption": "Simple elephant illustration using CSS"
+  },
+  {
+    "title": "Koala 🐨",
+    "link": "./koala.html",
+    "caption": "Funky koala face to understand how to draw basic shapes using CSS"
+  },
+  {
+    "title": "Inspectocat 🐱",
+    "link": "./inspectocat.html",
+    "caption": "Octodex inspectocat illustration"
+  },
+  {
+    "title": "Sail a boat ⛵",
+    "link": "./sailaboat.html",
+    "caption": "Illustration of a sea scape premiered by Scott Tusk on dribble. Responds to view port dimensions and adjusts the scene."
+  },
+  {
+    "title": "CSS Menu 🧭",
+    "link": "./menubar.html",
+    "caption": "A simple navigation menu that reveals the menu items on hover action. Adding accessibility support is pending."
+  },
+  {
+    "title": "CSS Tabset 🗂️",
+    "link": "./tabset.html",
+    "caption": "Tabbed navigation component implemented using CSS sibiling selector and radio button checked state."
+  },
+  {
+    "title": "Ninja cat",
+    "link": "./ninjacat.html",
+    "caption": "Ninja cat resting.",
+    "inProgress": true
+  }
+]

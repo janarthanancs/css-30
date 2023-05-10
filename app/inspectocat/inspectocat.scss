@@ -1,0 +1,488 @@
+@import "~normalize/normalize";
+
+$background: #f1f2ee;
+$head: #000;
+$face: #f3c9b1;
+$hat: #c3986b;
+$hatRibbon: #3a2313;
+$shirtCollar: #764b28;
+$window: #404040;
+$html: #90c63d;
+$windowControls: #fff;
+$windowBorder: #6c6d6f;
+$sleeveStyle: #c9e48b;
+$eyeLeft: #fff;
+$pupil: #ac5c53;
+html {
+  background: $background;
+}
+.coder-cat {
+  margin: 5rem auto;
+  // border: 2px solid #bb7e5d;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  .head {
+    background: $head;
+    position: relative;
+    width: 80%;
+    height: 50%;
+    left: 10%;
+    top: 10%;
+    border-radius: 20% 20% 90% 90% / 80% 80% 120% 120%;
+    .head-inner {
+      position: absolute;
+      left: 5%;
+      top: -1.65rem;
+      width: 90%;
+      height: 5rem;
+      border-radius: 50%;
+      background: $head;
+      z-index: 1;
+    }
+    .ear-left {
+      position: absolute;
+      background: $head;
+      height: 3.5rem;
+      width: 3.5rem;
+      top: -3.5rem;
+      left: 1.45rem;
+      z-index: -1;
+      transform: rotate(10deg);
+      border-radius: 0% 100% 50% 50% / 0% 80% 50% 100%;
+    }
+    .ear-right {
+      @extend .ear-left;
+      left: initial;
+      right: 1.45rem;
+      top: -3.5rem;
+      border-radius: 100% 0% 50% 50% / 50% 0% 100% 80%;
+      transform: rotate(-10deg);
+    }
+    .hat {
+      border-bottom: 3rem solid $hat;
+      border-left: 3rem solid transparent;
+      border-right: 3rem solid transparent;
+      height: 0;
+      left: 1rem;
+      top: -3.15rem;
+      position: absolute;
+      width: 7rem;
+      z-index: 2;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 15rem;
+        height: 3rem;
+        background: $hat;
+        top: 1.5rem;
+        border-radius: 100% 100% 50% 50% / 250% 250% 20% 20%;
+        left: -4rem;
+        z-index: 2;
+      }
+      .hat-ribbon {
+        position: absolute;
+        width: 8.75rem;
+        top: 0.75rem;
+        height: 0rem;
+        z-index: 9;
+        left: -2.35rem;
+        border-bottom: 1.5rem solid $hatRibbon;
+        border-left: 1.5rem solid transparent;
+        border-right: 1.5rem solid transparent;
+      }
+      .hat-stripe-left {
+        position: absolute;
+        border-right: 2px solid darken($hat, 20%);
+        border-radius: 50%;
+        height: 1.75rem;
+        width: 5px;
+        top: -1.25rem;
+        left: 25%;
+        transform: rotate(30deg);
+        z-index: 9;
+      }
+      .hat-stripe-right {
+        @extend .hat-stripe-left;
+        right: 25%;
+        left: initial;
+        border-right: 0;
+        border-left: 2px solid darken($hat, 20%);
+        transform: rotate(-30deg);
+      }
+      &:before {
+        z-index: 9;
+        position: absolute;
+        content: "";
+        width: 7rem;
+        height: 1.5rem;
+        background: $hat;
+
+        background-size: 14px 14px;
+        top: -1.45rem;
+        left: -0rem;
+        border-radius: 180% 180% 10% 10% / 300% 300% 10% 10%;
+      }
+    }
+    .face {
+      background: $face;
+      width: 11.5rem;
+      height: 6.5rem;
+      position: absolute;
+      z-index: 11;
+      border-radius: 35% 35% 40% 40% / 55% 55% 65% 65%;
+      top: 1.85rem;
+      left: 11.5%;
+      .eye-left {
+        width: 2.95rem;
+        height: 4.65rem;
+        position: absolute;
+        z-index: 13;
+        left: 1.25rem;
+        top: 0.75rem;
+        background: $eyeLeft;
+        border-radius: 50%;
+        animation: blink 6s infinite;
+        .pupil {
+          width: 2rem;
+          height: 3rem;
+          position: absolute;
+          background: $pupil;
+          border-radius: 50%;
+          top: 1.35rem;
+          left: 0.5rem;
+        }
+      }
+      .eye-right {
+        width: 3rem;
+        height: 0.25rem;
+        background: $pupil;
+        border-radius: 0.25rem;
+        transform: rotate(-7deg);
+        position: absolute;
+        right: 1.75rem;
+        top: 2.7rem;
+      }
+      .nose {
+        border-radius: 50%;
+        width: 0.75rem;
+        height: 0.75rem;
+        position: absolute;
+        background: $pupil;
+        bottom: 1.85rem;
+        left: 45%;
+      }
+      .mouth {
+        border-radius: 100%;
+        width: 1.85rem;
+        height: 1.85rem;
+        position: absolute;
+        bottom: 0.75rem;
+        left: 41%;
+        border-bottom: 0.25rem solid $pupil;
+      }
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      border-top: 2rem solid $head;
+      border-left: 2.5rem solid transparent;
+      border-right: 2.5rem solid transparent;
+      bottom: -0.75rem;
+      width: 2rem;
+      left: 4rem;
+      transform: rotate(-2deg);
+    }
+    .hair-left-1 {
+      position: absolute;
+      width: 6rem;
+      height: 2rem;
+      border-top: 1px solid $head;
+      border-radius: 50%;
+      left: -5rem;
+      top: 5rem;
+      transform: rotate(-5deg);
+    }
+    .hair-left-2 {
+      @extend .hair-left-1;
+      top: 6rem;
+      left: -4.75rem;
+      transform: rotate(-10deg);
+    }
+    .hair-right-1 {
+      @extend .hair-left-1;
+      right: -5rem;
+      transform: rotate(5deg);
+      left: initial;
+    }
+    .hair-right-2 {
+      @extend .hair-right-1;
+      right: -4.75rem;
+      top: 6rem;
+      transform: rotate(10deg);
+    }
+  }
+  .body {
+    background: $hat;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    left: 6.75rem;
+    z-index: -1;
+    border-radius: 0.25rem;
+    .over-coat {
+      border-radius: 0% 10% 0% 0% / 90%;
+      position: absolute;
+      width: 80%;
+      height: 30%;
+      background: $hat;
+      border-left: dotted 0.125rem $shirtCollar;
+      border-top: dashed 0.095rem $shirtCollar;
+      box-shadow: -4px -3px 0px 0px $hat,
+        -0.375rem -0.35rem 0px 0px darken($hat, 10%);
+      top: 2.95rem;
+      left: 1rem;
+      transform: skew(10deg) rotate(-4deg);
+    }
+    .button {
+      border-radius: 50%;
+      width: 0.625rem;
+      height: 0.625rem;
+      background: lighten($shirtCollar, 10%);
+      position: absolute;
+      z-index: 15;
+      top: 3.5rem;
+      left: 1.45rem;
+      box-shadow: inset 1px -1px 0px 0px darken($shirtCollar, 0%),
+        inset -0px 1px 1px 0px #fff;
+    }
+    .collar-left-back {
+      position: absolute;
+      width: 4rem;
+      height: 3rem;
+      background: $shirtCollar;
+      top: -0.75rem;
+      left: 0rem;
+      transform: skew(-30deg) rotate(-5deg);
+      border-left: dotted 0.115rem $hat;
+      border-bottom: dotted 0.115rem $hat;
+      box-shadow: -2px 2px 0px 3px $shirtCollar;
+    }
+    .collar-left-front {
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 2rem;
+      background-color: $shirtCollar;
+      top: -0.15rem;
+      left: -1.5rem;
+      transform: skew(-20deg) rotate(10deg);
+      border-left: dotted 0.115rem $hat;
+      border-bottom: dotted 0.115rem $hat;
+      box-shadow: -2px 2px 0px 3px $shirtCollar;
+    }
+    .collar-right-front {
+      content: "";
+      position: absolute;
+      width: 4rem;
+      height: 2rem;
+      background-color: $shirtCollar;
+      top: -0.15rem;
+      right: -1.5rem;
+      transform: skew(20deg) rotate(-10deg);
+      border-right: dotted 0.115rem $hat;
+      border-bottom: dotted 0.115rem $hat;
+      box-shadow: -2px 2px 0px 3px $shirtCollar;
+    }
+    .collar-right-back {
+      position: absolute;
+      width: 5rem;
+      height: 3rem;
+      background: $shirtCollar;
+      top: -0.75rem;
+      left: 0rem;
+      transform: skew(30deg) rotate(5deg);
+      border-bottom: dotted 0.115rem $hat;
+      border-right: dotted 0.115rem $hat;
+      box-shadow: -2px 2px 0px 3px $shirtCollar;
+    }
+  }
+  .hand-left {
+    position: absolute;
+    border-radius: 0% 0% 50% 50%;
+    height: 5rem;
+    z-index: -2;
+    width: 6rem;
+    border-bottom: 1rem solid $hat;
+    bottom: 4.5rem;
+    transform: rotate(5deg);
+    left: 2.5rem;
+    .palm {
+      background: $head;
+      width: 0.95rem;
+      height: 3rem;
+      border-radius: 2rem;
+      position: absolute;
+      left: 0rem;
+      top: 2.95rem;
+      transform: rotate(-50deg);
+      .dot-1 {
+        position: absolute;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: #0892a5;
+        border-radius: 50%;
+        top: 0.2rem;
+        left: 0.25rem;
+      }
+      .dot-2 {
+        @extend .dot-1;
+        top: 0.85rem;
+      }
+      .dot-3 {
+        @extend .dot-1;
+        top: 1.5rem;
+      }
+      .dot-4 {
+        @extend .dot-1;
+        top: 2.15rem;
+      }
+    }
+  }
+  .magnifier {
+    .handle {
+      z-index: 100;
+      bottom: 4.75rem;
+      left: 2.75rem;
+      position: absolute;
+      width: 1rem;
+      height: 4.75rem;
+      background: lighten($shirtCollar, 10%);
+      border-radius: 0rem 0rem 0.25rem 0.25rem;
+      box-shadow: 3px -1px 0 0px $shirtCollar,
+        inset 1px -1px 0px 1px lighten($shirtCollar, 20%);
+      transform: rotate(30deg);
+    }
+    .lens-cover {
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      position: absolute;
+      border: 0.35rem solid #6b6c6f;
+      box-shadow: inset 2px 2px 0px 0px #bbb, inset -2px 2px 0px 0px #bbb;
+      bottom: 9rem;
+      left: 2.75rem;
+      z-index: 100;
+      .lens {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.7;
+        background: #ccc;
+        .shadow {
+          position: absolute;
+          border-right: 0.15rem solid #fff;
+          height: 2rem;
+          border-radius: 100% 100% 100% 100%;
+          right: 0.5rem;
+          top: 2rem;
+          width: 1rem;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0.65rem;
+        height: 0.25rem;
+        background: #6b6c6f;
+        transform: rotate(30deg);
+        bottom: -0.175rem;
+        left: 1.15rem;
+        box-shadow: inset 2px 0px 0px 0px #ccc;
+      }
+    }
+    &:after {
+      position: absolute;
+      width: 1rem;
+      height: 2.5rem;
+      background-color: $head;
+      content: "";
+      border-radius: 50%;
+      bottom: 5.5rem;
+      left: 2.5rem;
+      transform: rotate(-60deg);
+      z-index: 999;
+    }
+  }
+  .ipad {
+    position: relative;
+    width: 12rem;
+    height: 8rem;
+    left: 3rem;
+    top: -0.75rem;
+    border: 0.5rem solid lighten(#444, 10%);
+    border-top: 0.75rem solid lighten(#444, 10%);
+    background: #444;
+    border-radius: 0.5rem 0.5rem 0 0;
+    .control {
+      border-radius: 50%;
+      width: 0.35rem;
+      height: 0.35rem;
+      top: -0.525rem;
+      background: #fff;
+      position: absolute;
+      &.c-1 {
+        left: 0.15rem;
+      }
+      &.c-2 {
+        left: 1rem;
+      }
+      &.c-3 {
+        left: 1.85rem;
+      }
+    }
+    .left-tag:after {
+      position: absolute;
+      content: "\003C";
+      font-size: 7.5rem;
+      font-family: "Open sans";
+      color: #90c63e;
+      left: 1rem;
+    }
+    .right-tag:after {
+      @extend .left-tag, :after;
+      content: "\003E";
+      left: initial;
+      right: 1rem;
+    }
+  }
+  .hand-right {
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    border-radius: 90% 90% 110% 110% / 50% 70% 140% 140%;
+    background: $head;
+    bottom: 3.5rem;
+    right: 5rem;
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  9%,
+  11%,
+  19%,
+  21%,
+  69%,
+  71%,
+  100% {
+    transform: scaleY(1);
+  }
+  10%,
+  20%,
+  70% {
+    transform: scaleY(0.1);
+  }
+}

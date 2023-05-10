@@ -1,0 +1,16 @@
+- const data = require('./../cards.json')
+mixin renderCard(card)
+ if card.inProgress
+  li.card.in-progress
+    span.card-title Coming soon
+    span.card-caption They say Rome wasn't built in a day
+ else
+  li.card(onclick="location.href='"+card.link+"'" )
+      span.card-title #{card.title}
+      span.card-caption #{card.caption}
+
+ul.cards
+  each card in data
+    +renderCard(card)
+
+

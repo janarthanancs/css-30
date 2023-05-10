@@ -1,0 +1,61 @@
+@import "~normalize/normalize";
+
+$background: #c1dbb3;
+$shadow: #7ebc89;
+$dropShadow: #dcead5;
+
+html {
+  box-sizing: border-box;
+  line-height: normal;
+  background: lighten(#c1dbb3, 10%);
+  font-family: "Noto Sans";
+  font-weight: 300;
+}
+
+ul {
+  list-style-type: none;
+  background: $background;
+  box-shadow: 1px 1px 0px 0px darken($shadow, 30%);
+  position: relative;
+  font-size: 0;
+}
+li {
+  display: inline-block;
+  font-size: 1.15rem;
+
+  label {
+    display: inline-block;
+    font-weight: 300;
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+  input {
+    display: none;
+  }
+  &:active {
+    background: lighten($background, 10%);
+    box-shadow: inset -1px 1px 1px 0px darken($shadow, 30%),
+      1px 1px 0px 0px lighten($background, 10%);
+  }
+}
+p.active-content {
+  display: none;
+  position: absolute;
+  line-height: 1.5;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  padding: 0rem 0.5rem 0.5rem 1rem;
+  left: 0;
+  top: 2.65rem;
+  transition: all 1s ease;
+}
+input[type="radio"]:checked ~ p.active-content {
+  display: block;
+  transition: all 1s ease;
+}
+input[type="radio"]:checked ~ label {
+  background: lighten($background, 10%);
+  box-shadow: inset -1px 1px 0px 0px darken($shadow, 30%),
+    -1px -1px 1px 0px darken($shadow, 30%), 0px 2px 0px 0px $dropShadow;
+    font-weight: 400;
+}

@@ -1,0 +1,180 @@
+@import "~normalize/normalize";
+
+$background: #ffb4a2;
+//$koala: #2e4057;
+$koala: #807f84;
+//$ears-inner: #048ba8;
+$ears-inner: #ffcdb2;
+$eyes: #d4b483;
+$eyes: #a6a3a9;
+
+$pupil: #e4dfda;
+
+//$mouth: #C1666B;
+$mouth: #ffcdb2;
+$nose: #414550;
+//$eyeinner: #414041;
+$eyeinner: #2e1c18;
+html {
+  box-sizing: border-box;
+  * {
+    box-sizing: inherit;
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+}
+html {
+  background-color: $background;
+}
+
+@mixin ear($dir) {
+  #{$dir}: -30%;
+  top: 0;
+}
+
+.koala {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  //border-radius: 50%;
+  margin: 5rem auto;
+  .head {
+    border-radius: 80% 80% 100% 100%;
+    background-color: $koala;
+    width: 100%;
+    height: 90%;
+    position: relative;
+    z-index: 2;
+    .eye {
+      border-radius: 50%;
+      width: 25%;
+      height: 25%;
+      position: absolute;
+      background-color: $eyes;
+      &.eye-left {
+        top: 30%;
+        left: 10%;
+      }
+      &.eye-right {
+        top: 30%;
+        right: 10%;
+      }
+      .eye-inner {
+        position: absolute;
+        top: 5%;
+        background-color: $eyeinner;
+        width: 50%;
+        height: 60%;
+        border-radius: 50%;
+        &.eye-inner-left {
+          left: 35%;
+        }
+        &.eye-inner-right {
+          right: 35%;
+        }
+        .pupil {
+          position: absolute;
+          border-radius: 50%;
+          width: 10%;
+          height: 30%;
+          background-color: $pupil;
+          left: 45%;
+          top: 20%;
+        }
+      }
+    }
+    .nose {
+      position: absolute;
+      width: 25%;
+      height: 50%;
+      background-color: $nose;
+      border-radius: 80% 80% 40% 40%;
+      top: 35%;
+      left: 37.5%;
+      .nose-inner {
+        background-color: lighten($nose, 10%);
+        width: 100%;
+        height: 80%;
+        position: absolute;
+        top: 5%;
+        left: 0%;
+        border-radius: 50% 50% 30% 30%;
+      }
+    }
+    .mouth {
+      position: absolute;
+      bottom: -7%;
+      left: 37.95%;
+      border: 2.25rem solid lighten($mouth, 0%);
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-radius: 20% 20% 30% 40%;
+      &:before {
+        position: absolute;
+        top: -1.15rem;
+        left: -2rem;
+        content: "";
+        border: 2.15rem solid $koala;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-radius: 20%;
+      }
+    }
+    .hair {
+      position: absolute;
+      border: 2rem solid $koala;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      top: -3rem;
+      left: 30%;
+      &:before {
+        position: absolute;
+        border: 1rem solid $koala;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        top: -0.75rem;
+        content: "";
+      }
+    }
+    .hair + .hair {
+      left: 45%;
+      top: -4rem;
+      border: 2.75rem solid $koala;
+      border-top-color: transparent;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  .ear {
+    position: absolute;
+    border-radius: 50%;
+    background-color: $koala;
+    width: 60%;
+    height: 60%;
+    z-index: 1;
+    &.left {
+      @include ear("left");
+    }
+    &.right {
+      @include ear("right");
+    }
+    .inner {
+      position: relative;
+      background-color: $ears-inner;
+      border-radius: 50%;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+    }
+  }
+}

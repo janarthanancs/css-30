@@ -1,0 +1,23 @@
+- const tabs = require('./tabset.json');
+
+mixin addTabs()
+  ul.tabs
+    each tab in tabs
+      li
+        if tab.checked
+          input(type=`radio` name='tabset'  id=tab.tabId checked)
+        else
+          input(type='radio' name='tabset' id=tab.tabId)
+        label.title(for=tab.tabId) #{tab.title}
+        p.active-content #{tab.content}
+
+doctype html
+html
+  head
+    title CSS Tabset
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap" rel="stylesheet")
+    link(href=require('./tabset.scss') rel='stylesheet')
+  body
+    +addTabs()

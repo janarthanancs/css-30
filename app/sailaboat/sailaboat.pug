@@ -1,0 +1,49 @@
+- let clouds = 5, hills = 9, valleys = 3, trees = 11, outerRipples = 2, innerRipples = 4, outerRipplesWave = 2, yatchets = 3;
+mixin generateObject(obj)
+  while obj -- > 0
+    if block
+      block
+
+mixin createYatchts(count)
+  while count -- > 0
+    section.yatcht
+      .hull
+        .stern
+        .deck
+          .entry
+          .entry
+          .main-sail
+
+doctype html
+html
+  head
+    title Sail a boat
+    meta(name="viewport", content="width=device-width, initial-scale=1, minimum-scale=1")
+    link(href=require('./sailaboat.scss') rel='stylesheet')
+  body
+    .scene
+      .sky
+        .moon
+        +generateObject(clouds)
+          .cloud
+            .cc
+      .hills
+        +generateObject(hills)
+          .hill
+      .field
+        +generateObject(valleys)
+          .valley
+        +generateObject(trees)
+          span.tree
+      .river
+        .wave
+          .wave-inner
+          +generateObject(outerRipples)
+            span.ripple
+        .wave.wave-2
+          .wave-inner
+          +generateObject(innerRipples)
+            span.ripple
+        +generateObject(outerRipplesWave)
+          span.ripple
+        +createYatchts(yatchets)

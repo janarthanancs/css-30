@@ -1,0 +1,23 @@
+[
+  {
+    "tabId": "tab-1",
+    "title": "Lorel",
+    "content": "Lorem ipsum dolor sit amet, no viderer adipisci voluptaria per, viderer scriptorem vel ea. No similique concludaturque eam, ne has dico delicata vituperatoribus, te mea augue viderer. Per te fabulas fierent. Ei quo sale suavitate, oblique persius euismod ei cum. Phaedrum constituam repudiandae cum ei, ne eum alii prima quaeque. Te vim tollit salutandi, usu eius legere elaboraret ex. Ex repudiare expetendis mea, ne iisque facilis lucilius his. Cu vis copiosae dissentiet disputationi, eam illum salutatus ea. Ne dico docendi salutatus has, an augue accumsan iracundia pri, eum partiendo argumentum scripserit te. Nam illum idque argumentum ne, ei per sanctus theophrastus intellegebat, in sit sonet signiferumque."
+  },
+  {
+    "tabId": "tab-2",
+    "title": "Ipsum",
+    "content": "Lorem ipsum dolor sit amet, no viderer adipisci voluptaria per, viderer scriptorem vel ea. No similique concludaturque eam, ne has dico delicata vituperatoribus, te mea augue viderer. Per te fabulas fierent. Ei quo sale suavitate, oblique persius euismod ei cum. Phaedrum constituam repudiandae cum ei, ne eum alii prima quaeque."
+  },
+  {
+    "tabId": "tab-3",
+    "title": "Dollar",
+    "checked": true,
+    "content": "Here we hide the content blocks of all the tabs by default and then use CSS sibiling selector (~) to select the nearest content of a radio button with attribute 'checked' and toggle its visibility to true."
+  },
+  {
+    "tabId": "tab-4",
+    "title": "Sit Amet",
+    "content": "Lorem ipsum dolor sit amet, no viderer adipisci voluptaria per, viderer scriptorem vel ea. No similique concludaturque eam, ne has dico delicata vituperatoribus, te mea augue viderer. Per te fabulas fierent. Ei quo sale suavitate, oblique persius euismod ei cum. Phaedrum constituam repudiandae cum ei, ne eum alii prima quaeque. Te vim tollit salutandi, usu eius legere elaboraret ex. Ex repudiare expetendis mea, ne iisque facilis lucilius his. Cu vis copiosae dissentiet disputationi, eam illum salutatus ea. Ne dico docendi salutatus has, an augue accumsan iracundia pri, eum partiendo argumentum scripserit te. Nam illum idque argumentum ne, ei per sanctus theophrastus intellegebat, in sit sonet signiferumque. Usu id mundi molestie, nostro dissentiet conclusionemque mei at, omnes delenit luptatum ne qui. Iudico accusam ut nam. Integre efficiantur vel et. Cum populo consectetuer id, an vix choro nemore volumus, adipisci urbanitas consectetuer usu ut. Oportere dissentiet usu ne, eam duis assum in"
+  }
+]

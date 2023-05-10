@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title CSS only menu
+    link(href=require('./menubar.scss') rel='stylesheet')
+  body
+    ul.menu
+      li.items
+        a.title
+          | JavaScript
+        ul.menu-items
+          li.menu-item
+            a(href='#') Closures
+          li.menu-item
+            a(href='#') Reducers
+          li.menu-item
+            a(href='#') Generators
+          li.menu-item
+            a(href='#') Anonymous Functions
+          li.menu-item
+            a(href='#') Prototypal Inheritance
+      li.items
+        a.title
+          | HTML5
+        ul.menu-items
+          li.menu-item
+            a(href='#') DOM
+          li.menu-item
+            a(href='#') Tags&nbsp;&amp;&nbsp;Attributes
+      li.items
+        a.title
+          | CSS3
+        ul.menu-items
+          li.menu-item
+            a(href='#') Box Model
+          li.menu-item
+            a(href='#') Pseudo Selectors
+          li.menu-item
+            a(href='#') Browser Quirks

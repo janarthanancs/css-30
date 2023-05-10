@@ -1,0 +1,50 @@
+ul.cards {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  li.card {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    width: 20rem;
+    min-height: 10rem;
+    cursor: pointer;
+    &.in-progress {
+      cursor: initial;
+    }
+  }
+}
+li.card {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.1);
+
+  .card-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .card-caption {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.35;
+    color: #555;
+  }
+  &.in-progress {
+    * {color: #aaa}
+    .card-title {
+      font-weight: 100;
+    }
+  }
+}
+
+
+@media (max-width: 46rem) {
+  ul.cards {
+    flex-flow: column nowrap;
+    li.card {
+      width: calc(100% - 60px);
+    }
+  }
+}
