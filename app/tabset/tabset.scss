@@ -47,11 +47,9 @@ p.active-content {
   padding: 0rem 0.5rem 0.5rem 1rem;
   left: 0;
   top: 2.65rem;
-  transition: all 1s ease;
 }
 input[type="radio"]:checked ~ p.active-content {
   display: block;
-  transition: all 1s ease;
 }
 input[type="radio"]:checked ~ label {
   background: lighten($background, 10%);

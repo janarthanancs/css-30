@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "description": "A playground to showcase CSS design illustrations, solutions to CSS code challenges and everything HTML and CSS.",
   "author": "janarthanancs",
-  "repository":"https://github.com/janarthanancs/css-challenges",
+  "homepage": "https://janarthanancs.github.io/css-challenges",
+  "repository": "https://github.com/janarthanancs/css-challenges",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --mode=development",
-    "build": "webpack --mode=development --progress",
-    "preview": "npm run build && http-server dist -og"
+    "start": "webpack serve --mode=production",
+    "build": "webpack --mode=production",
+    "preview": "npm run build && http-server dist -og",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
     "http-server": "^14.1.1",
     "pug-plugin": "^4.9.5",
     "sass": "^1.58.3",
